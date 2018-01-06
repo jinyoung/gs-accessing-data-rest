@@ -1,8 +1,7 @@
 package pst.course;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by uengine on 2018. 1. 6..
@@ -19,6 +18,19 @@ public class Course {
     int maxEnrollment;
     int minEnrollment;
     Double unitPrice;
+
+    @OneToMany
+    List<Clazz> clazzes;
+
+
+    public List<Clazz> getClazzes() {
+        return clazzes;
+    }
+
+    public void setClazzes(List<Clazz> clazzes) {
+        this.clazzes = clazzes;
+    }
+
 
     public Long getId() {
         return id;
