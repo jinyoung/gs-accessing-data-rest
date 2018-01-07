@@ -19,7 +19,7 @@ public class Course {
     int minEnrollment;
     Double unitPrice;
 
-    @OneToMany
+    @OneToMany( cascade = CascadeType.ALL, fetch = FetchType.EAGER) @JoinColumn(name="cid")
     List<Clazz> clazzes;
 
 
